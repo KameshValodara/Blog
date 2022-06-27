@@ -1,0 +1,297 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "APIs Practice",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/home": {
+            "post": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Home data",
+                "description": "This is practice",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "query",
+                        "description": "Provide your post",
+                        "required": true
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Provide your description",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Provide your status",
+                        "required": true
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "Provide your user",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/home/index": {
+            "get": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Home data",
+                "description": "This is practice",
+                "operationId": "778ab206bc4a7aafe448c2511aae1242",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/home/update": {
+            "put": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Home data",
+                "description": "This is practice",
+                "operationId": "d7038ab4a696b39140c88cd3e152f92d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide your id",
+                        "required": true
+                    },
+                    {
+                        "name": "post",
+                        "in": "query",
+                        "description": "Provide your post",
+                        "required": true
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Provide your description",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Provide your status",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/home/delete": {
+            "delete": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Home data",
+                "description": "This is practice",
+                "operationId": "ff33e1d6c5bbc76314d89a4001884734",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide your id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/home/search/": {
+            "get": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Search Data",
+                "description": "This is search data",
+                "operationId": "b04d21194b0085392aed499359f6f06d",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "query",
+                        "description": "Provide name to search",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Login",
+                "description": "Login Page",
+                "operationId": "7fd6912505786bf15610e828f5453efa",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Provide your Email",
+                        "required": true
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Provide your password",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Register",
+                "description": "Registration Page",
+                "operationId": "6b72333a74edaccf648803c765875482",
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "name",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "Email",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "Password",
+                                        "type": "string"
+                                    },
+                                    "c_password": {
+                                        "description": "Confirm Password",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Registration Example",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "description": "token",
+                                            "type": "string"
+                                        },
+                                        "name": {}
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/details": {
+            "get": {
+                "tags": [
+                    "Details"
+                ],
+                "summary": "Details",
+                "description": "Detail Page",
+                "operationId": "0c8e62ac5388b17b9c0de06f59eb2408",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "passport": {
+                "type": "apiKey",
+                "description": "Laravel passport apiKey security (Bearer).",
+                "in": "header",
+                "name": "Authorization",
+                "scheme": "https",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "http://localhost/oauth/authorize",
+                        "tokenUrl": "http://localhost/oauth/token",
+                        "refreshUrl": "http://localhost/token/refresh",
+                        "scopes": []
+                    }
+                }
+            }
+        }
+    }
+}
