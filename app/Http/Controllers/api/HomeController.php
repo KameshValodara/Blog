@@ -6,11 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
-
-
 class HomeController extends Controller
 {
-
     /**
      * @OA\Get(
      *    path="/api/home/index",

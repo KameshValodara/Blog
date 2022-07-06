@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
-    public function member(){
-        return $this->belongsTo(Member::class);
+    public function companyDetails(){
+        //return $this->belongsTo(Member::class);
+        return $this->hasOne(CompanyDetail::class);
+    }
+
+    //Many To Many Relationships
+    public function members(){
+        return $this->belongsToMany(Member::class,'member_companies');
     }
 }

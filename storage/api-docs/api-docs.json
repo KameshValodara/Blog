@@ -5,6 +5,29 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/home/index": {
+            "get": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Home data",
+                "description": "This is practice",
+                "operationId": "778ab206bc4a7aafe448c2511aae1242",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        },
         "/api/home": {
             "post": {
                 "tags": [
@@ -12,6 +35,7 @@
                 ],
                 "summary": "Home data",
                 "description": "This is practice",
+                "operationId": "68f0c9ce4ab9ed0a2735b408fe0a28e4",
                 "parameters": [
                     {
                         "name": "post",
@@ -38,24 +62,6 @@
                         "required": true
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {}
-                        }
-                    }
-                }
-            }
-        },
-        "/api/home/index": {
-            "get": {
-                "tags": [
-                    "Home"
-                ],
-                "summary": "Home data",
-                "description": "This is practice",
-                "operationId": "778ab206bc4a7aafe448c2511aae1242",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -155,6 +161,324 @@
                 "responses": {
                     "200": {
                         "description": "Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/members-details": {
+            "get": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "OneToOne (members-membersDetails)",
+                "description": "One To One Relationship Members and Member Details",
+                "operationId": "9ea1e5cf24fac9d0c5437a7d4c6b365f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/members-company": {
+            "get": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "OneToMany (members-company)",
+                "description": "One To Many Relationship (Members and Company)",
+                "operationId": "343c43e9f12cc6d987bf255019432a62",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/company-details": {
+            "get": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "OneToOne (company-companyDetails)",
+                "description": "One To One Relationship Company and Company Details",
+                "operationId": "c0fc9421532ca0c3be62e5f86a9b1db9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/add-companies": {
+            "post": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "add-companies",
+                "description": "Add Companies",
+                "operationId": "ace8ddf09c4456ce20da4d27eaec8eba",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Provide Name",
+                        "required": true
+                    },
+                    {
+                        "name": "pincode",
+                        "in": "query",
+                        "description": "Provide Pincode",
+                        "required": true
+                    },
+                    {
+                        "name": "member_id",
+                        "in": "query",
+                        "description": "Provide Member Id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/add-members": {
+            "post": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "add-members",
+                "description": "Add Companies",
+                "operationId": "b56cf6771e222be72803f188c7a339b3",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Provide Name",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Provide Email",
+                        "required": true
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Provide Address",
+                        "required": true
+                    },
+                    {
+                        "name": "company_id",
+                        "in": "query",
+                        "description": "Provide Company Ids",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/show-companies": {
+            "get": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "Many To Many Relationship (with Companies)",
+                "description": "Show Companies",
+                "operationId": "0de2c29308bbdb4fc90538ee787fe72c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/show-members": {
+            "get": {
+                "tags": [
+                    "Relationship : OneToOne OneToMany ManyToMany"
+                ],
+                "summary": "Many To Many Relationship (Members)",
+                "description": "Show Members",
+                "operationId": "83e08dd1d57ed7a88bb1c93cafdc9efb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/member-companydetails": {
+            "get": {
+                "tags": [
+                    "Relationship : HasOneThrough"
+                ],
+                "summary": "member-companydetails",
+                "description": "HasOneThrough between Member to Company Details",
+                "operationId": "06ed352beb5cb509d57f7913a37a6ddb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/hasOneOfMany": {
+            "get": {
+                "tags": [
+                    "Relationship : HasOneThrough"
+                ],
+                "summary": "hasOneOfMany",
+                "description": "HasOneOfMany latest, oldest and OfMany",
+                "operationId": "ca94ab61d10d025ec78e7ede4fe30114",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Provide id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/morphOne": {
+            "get": {
+                "tags": [
+                    "Relationship : Polymorphic"
+                ],
+                "summary": "morphOne",
+                "description": "Polymorphic morphOne Relationship",
+                "operationId": "52c926deb6121de25f43b441834b0487",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/morphMany": {
+            "get": {
+                "tags": [
+                    "Relationship : Polymorphic"
+                ],
+                "summary": "morphMany",
+                "description": "Polymorphic morphMany Relationship",
+                "operationId": "dc4bf99e87f33addc948f799f3681827",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/morphedByMany": {
+            "get": {
+                "tags": [
+                    "Relationship : Polymorphic"
+                ],
+                "summary": "morphedByMany",
+                "description": "Polymorphic Many To Many Relationship",
+                "operationId": "cbbd04ed5c1cc7a6aedd1a00254f1153",
+                "responses": {
+                    "200": {
+                        "description": "OK",
                         "content": {
                             "application/json": {}
                         }
